@@ -11,8 +11,8 @@ function changeDetails(response) {
   humidityElement.innerHTML = `${humidity}%`;
   let windElement = document.querySelector("#wind");
   windElement.innerHTML = `${wind}km/h`;
-  let tempIcon = document.querySelector("#weather-app-icon");
-  tempIcon.innerHTML = "";
+  let iconElement = document.querySelector("#weather-app-icon");
+  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon">`;
 }
 function search(event) {
   event.preventDefault();

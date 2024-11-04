@@ -19,7 +19,7 @@ header {
 h1 {
   color: #272142;
   font-size: 38px;
-  line-height: 48px;
+  line-height: 88px;
 }
 .search-form-input {
   background-color: rgb(249, 247, 254);
@@ -63,8 +63,9 @@ p strong {
   color: black;
 }
 .weather-app-icon {
-  font-size: 44px;
-  margin-top: 22px;
+  font-size: 60px;
+  width: 88px;
+  height: 88px;
 }
 .weather-app-temperature {
   font-size: 88px;
