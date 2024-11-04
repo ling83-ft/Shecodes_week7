@@ -5,12 +5,12 @@ function changeDetails(response) {
   let condition = response.data.condition.description;
   let humidity = response.data.temperature.humidity;
   let wind = response.data.wind.speed;
-  let currentDateELement = document.querySelector("#weather-app-details");
-  let originalstring = currentDateELement.innerHTML;
-  let newString = originalstring.replace("clear sky", `${condition}`);
-  newString = newString.replace("47", `${humidity}`);
-  newString = newString.replace("2.57", `${wind}`);
-  currentDateELement.innerHTML = newString;
+  let conditionElement = document.querySelector("#condition");
+  conditionElement.innerHTML = `${condition}`;
+  let humidityElement = document.querySelector("#humidity");
+  humidityElement.innerHTML = `${humidity}%`;
+  let windElement = document.querySelector("#wind");
+  windElement.innerHTML = `${wind}km/h`;
   let tempIcon = document.querySelector("#weather-app-icon");
   tempIcon.innerHTML = "";
 }
@@ -49,15 +49,9 @@ function formatDate(date) {
     "Saturday",
   ];
 
-  let currentDateELement = document.querySelector("#weather-app-details");
-
-  let originalstring = currentDateELement.innerHTML;
+  let currentDateELement = document.querySelector("#weather-date");
   let formattedDay = days[day];
-  let newString = originalstring.replace(
-    "Monday 12:43",
-    `${formattedDay} ${hours}:${minutes}`
-  );
-  currentDateELement.innerHTML = newString;
+  currentDateELement.innerHTML = `${formattedDay} ${hours}:${minutes}`;
 }
 
 formatDate(new Date());
