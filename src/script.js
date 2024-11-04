@@ -5,6 +5,8 @@ function changeDetails(response) {
   let condition = response.data.condition.description;
   let humidity = response.data.temperature.humidity;
   let wind = response.data.wind.speed;
+  let date = new Date(response.data.time * 1000);
+  formatDate(date);
   let conditionElement = document.querySelector("#condition");
   conditionElement.innerHTML = `${condition}`;
   let humidityElement = document.querySelector("#humidity");
@@ -19,7 +21,7 @@ function search(event) {
   let searchInput = document.querySelector("#search-form-input");
   let cityElement = document.querySelector("#city");
   cityElement.innerHTML = searchInput.value;
-  formatDate(new Date());
+
   //call api and search city
   let apiKey = "4a38ba6a1f4e46ao3f0t9673657bc0fc";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${searchInput.value}&key=${apiKey}`;
